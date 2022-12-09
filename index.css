@@ -1,0 +1,280 @@
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+  color: inherit;
+}
+
+:root {
+  font-size: 15px;
+  --color-green: hsl(147, 84%, 12%);
+  --color-orange: hsl(35, 77%, 62%);
+  --color-red: hsl(5, 85%, 63%);
+  --color-white: hsl(36, 100%, 99%);
+  --color-grayish-blue: hsl(233, 8%, 79%);
+  --color-dark-grayish-blue: hsl(236, 13%, 42%);
+  --color-very-dark-blue: hsl(240, 100%, 5%);
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+}
+
+body {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1em;
+  color: var(--color-very-dark-blue);
+}
+
+.blur {
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  position: fixed;
+  display: none;
+  opacity: 0.5;
+  background-color: var(--color-white);
+}
+
+.blur.visible {
+  display: block;
+}
+
+button {
+  border: none;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+.header {
+  padding: 1.5em 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu-button {
+  width: 3em;
+}
+
+.navbar {
+  background-color: var(--color-white);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 30%;
+  right: 0;
+  
+  display: none;
+  flex-direction: column;
+  padding: 1.25em;
+}
+
+.navbar.open {
+  display: flex;
+  transform: none;
+}
+
+.navbar .menu-button {
+  align-self: flex-end;
+  width: 2em;
+  margin-top: 0.75em;
+}
+
+.navbar .links {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  font-size: 1.25rem;
+  margin-top: 5em;
+}
+
+
+.navbar a:hover{
+  color: var(--color-green);
+}
+ 
+.links .link {
+  text-decoration: none;
+  color: var(--color-very-dark-blue);
+  margin: 0.75em 0;
+}
+
+.section.primary .primary-image {
+  width: 100%;
+}
+
+.section.primary .primary-image.desktop {
+  display: none;
+}
+
+.main {
+  display: grid;
+  grid-gap: 1rem;
+}
+
+.section.primary .title {
+  font-size: 3rem;
+  line-height: 1em;
+  margin: 0.5em 0;
+}
+
+.section.primary .information .paragraph {
+  color: var(--color-dark-grayish-blue);
+  line-height: 1.5em;
+}
+
+.section.primary .information .button {
+  background-color: var(--color-red);
+  font-size: 1.15rem;
+  padding: 1em 2em;
+  text-transform: uppercase;
+  letter-spacing: 0.5ch;
+  color: var(--color-white);
+  font-weight: 700;
+  margin: 1.25em 0;
+}
+
+.section.new {
+  background-color: var(--color-very-dark-blue);
+  color: var(--color-white);
+  padding: 0 1.25em;
+}
+
+.section.new .title {
+  font-size: 2rem;
+  color: var(--color-orange);
+  padding-top: 0.5em;
+}
+
+.section.new .article {
+  padding: 2.25em 0;
+}
+
+.section.new .article .article-title {
+  letter-spacing: 0.05ch;
+  margin-bottom: 0.5em;
+}
+
+.section.new .article .article-preview {
+  color: var(--color-grayish-blue);
+  line-height: 1.75em;
+}
+
+.section.new .article:not(:last-child) {
+  border-bottom: 1px solid var(--color-dark-grayish-blue);
+}
+
+.section.trending {
+  display: flex;
+  flex-direction: column;
+}
+
+.section.trending .trending-article {
+  display: flex;
+  align-items: stretch;
+  margin: 1.75em 0;
+}
+
+.trending-article .trending-image {
+  flex: 2;
+}
+
+.trending-article .trending-information {
+  flex: 5;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-self: stretch;
+  justify-self: center;
+  padding: 0.25em 0 0.25em 1em;
+}
+
+.trending-information .trending-number {
+  font-size: 2rem;
+  color: var(--color-grayish-blue);
+}
+
+.trending-information .trending-title {
+  font-size: 1.25rem;
+}
+
+.trending-information .trending-summary {
+  color: var(--color-dark-grayish-blue);
+}
+
+@media screen and (min-width: 768px) {
+  .main {
+    grid-template-columns: 2fr 1fr;
+  }
+
+  .section.primary {
+    display: grid;
+  }
+
+  .section.primary .primary-content {
+    display: flex;
+    margin-top: 1em;
+  }
+
+  .section.primary .primary-image.desktop {
+    display: block;
+  }
+
+  .section.primary .primary-image.mobile {
+    display: none;
+  }
+
+  .section.new {
+    height: min-content;
+  }
+
+  .menu-button {
+    display: none;
+  }
+
+  .navbar {
+    background-color: inherit;
+    position: static;
+    display: flex;
+    transform: none;
+  }
+
+  .navbar .links {
+    flex-direction: row;
+    margin: 0;
+  }
+
+  .links .link {
+    margin: 0 1em;
+    font-size: 1.15rem;
+    color: var(--color-dark-grayish-blue);
+  }
+
+  .section.trending {
+    flex-direction: row;
+    justify-content: space-between;
+    grid-column: 1 / span 2;
+  }
+
+  .section.trending .trending-article {
+    max-width: 30%;
+  }
+
+  .trending-article .trending-image img {
+    height: 100%;
+  }
+}
